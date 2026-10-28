@@ -20,6 +20,7 @@
       <a class="nav-link active" href="#overview"><span>▦</span> Tổng quan</a>
       <a class="nav-link" href="#orders"><span>▤</span> Đơn hàng</a>
       <a class="nav-link" href="#products"><span>▧</span> Sản phẩm</a>
+      <a class="nav-link" href="#chat"><span>☏</span> Trò chuyện <span id="chat-unread-badge" class="chat-nav-badge" hidden>0</span></a>
       <div class="sidebar-note">
         <span class="note-icon">✦</span>
         <strong>Bản demo MVP</strong>
@@ -105,6 +106,38 @@
           <div class="product-list-heading"><strong>Danh mục hiện tại</strong><span id="product-count-label">0 sản phẩm</span></div>
           <div id="product-list" class="product-list"></div>
         </article>
+      </section>
+
+
+      <section id="chat" class="panel chat-panel">
+        <div class="panel-heading chat-panel-heading">
+          <div><p class="eyebrow">CHĂM SÓC KHÁCH HÀNG</p><h2>Trò chuyện với khách hàng</h2><p class="chat-intro">Quản lý hội thoại, gửi trả lời nhanh và theo dõi tin nhắn chưa đọc.</p></div>
+          <button class="button button-primary" id="chat-new-conversation" type="button">＋ Hội thoại demo</button>
+        </div>
+        <div class="chat-inbox-toolbar">
+          <label class="search-box"><span>⌕</span><input id="chat-search" type="search" placeholder="Tìm tên khách hoặc nội dung..." aria-label="Tìm hội thoại"></label>
+          <select id="chat-filter" aria-label="Lọc hội thoại"><option value="all">Tất cả hội thoại</option><option value="unread">Chưa đọc</option></select>
+        </div>
+        <div class="chat-layout">
+          <aside class="chat-list" id="chat-list" aria-label="Danh sách hội thoại"></aside>
+          <section class="chat-conversation" aria-label="Nội dung trò chuyện">
+            <div class="chat-conversation-header" id="chat-header"><strong>Chọn một hội thoại</strong></div>
+            <div class="chat-messages" id="chat-messages" aria-live="polite"><div class="chat-empty-state">Chọn khách hàng để xem tin nhắn.</div></div>
+            <div class="chat-compose-area">
+              <div class="quick-replies" aria-label="Câu trả lời nhanh">
+                <span>Trả lời nhanh:</span>
+                <button type="button" class="quick-reply" data-chat-template="Dạ shop sẵn sàng hỗ trợ bạn ạ.">Chào khách</button>
+                <button type="button" class="quick-reply" data-chat-template="Dạ, shop sẽ kiểm tra đơn hàng và phản hồi bạn sớm ạ.">Kiểm tra đơn</button>
+                <button type="button" class="quick-reply" data-chat-template="Dạ, bạn cho shop xin thêm thông tin để hỗ trợ chính xác nhé.">Xin thêm thông tin</button>
+              </div>
+              <form id="chat-form" class="chat-compose">
+                <textarea id="chat-reply" rows="2" maxlength="1000" placeholder="Nhập tin nhắn trả lời..." aria-label="Tin nhắn trả lời" required disabled></textarea>
+                <button class="button button-primary" id="chat-send" type="submit" disabled>Gửi ↗</button>
+              </form>
+              <div class="chat-footnote"><span>●</span> Chat demo: tin nhắn chỉ lưu trong trình duyệt này, chưa gửi đến khách thật.</div>
+            </div>
+          </section>
+        </div>
       </section>
 
       <footer class="app-footer"><span>ShopMini <span class="footer-dot">•</span> Dự án demo học tập</span><span>Chưa dùng cho dữ liệu kinh doanh thật</span></footer>
