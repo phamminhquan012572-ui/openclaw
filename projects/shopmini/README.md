@@ -44,3 +44,15 @@ Nếu trình duyệt chặn lưu trữ khi mở file trực tiếp, hãy chạy 
 ## Nơi lưu mã nguồn
 
 Được lưu trong fork OpenClaw ở nhánh `feature/shopmini-mvp`, thư mục `projects/shopmini/`. Nhánh `main` không bị chỉnh sửa.
+
+
+## Tính năng mới: Trung tâm trò chuyện demo
+
+- Danh sách hội thoại mẫu với tìm kiếm và bộ lọc tin nhắn chưa đọc.
+- Mở hội thoại, xem lịch sử tin nhắn và trả lời bằng ô nhập tin.
+- Câu trả lời nhanh để tư vấn, chào khách hoặc hỏi thêm thông tin.
+- Tạo hội thoại demo và mô phỏng tin nhắn đến từ khách hàng.
+- Hiển thị số tin nhắn chưa đọc và tự lưu lịch sử trong localStorage.
+- Dữ liệu hội thoại cũ được bổ sung mẫu tự động khi mở phiên bản này lần đầu.
+
+**Giới hạn quan trọng:** Đây là hộp chat mô phỏng ở frontend. Tin nhắn chỉ lưu trên trình duyệt hiện tại, chưa được gửi tới khách hàng thật và chưa đồng bộ giữa các thiết bị. Để nhận/gửi tin nhắn thật qua Zalo, Messenger hoặc Telegram, cần backend và tích hợp API/webhook phù hợp.
