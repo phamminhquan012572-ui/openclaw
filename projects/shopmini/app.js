@@ -158,7 +158,7 @@
   }
 
   function initials(name) {
-    return String(name || "?").trim().split(/\\s+/).slice(-2).map((part) => part[0] || "").join("").toLocaleUpperCase("vi");
+    return String(name || "?").trim().split(/\s+/).slice(-2).map((part) => part[0] || "").join("").toLocaleUpperCase("vi");
   }
 
   function getSelectedChat() {
@@ -209,7 +209,7 @@
     const messages = [...(chat.messages || [])].sort((a, b) => new Date(a.time).getTime() - new Date(b.time).getTime());
     $("#chat-messages").innerHTML = messages.length ? messages.map((message) => {
       const fromShop = message.sender === "shop";
-      return `<div class="chat-message ${fromShop ? "from-shop" : "from-customer"}"><div class="chat-bubble">${safeText(message.text).replace(/\\n/g, "<br>")}</div><div class="chat-message-meta">${fromShop ? "ShopMini" : safeText(chat.customer)} · ${chatTime(message.time)}</div></div>`;
+      return `<div class="chat-message ${fromShop ? "from-shop" : "from-customer"}"><div class="chat-bubble">${safeText(message.text).replace(/\n/g, "<br>")}</div><div class="chat-message-meta">${fromShop ? "ShopMini" : safeText(chat.customer)} · ${chatTime(message.time)}</div></div>`;
     }).join("") : '<div class="chat-empty-state">Chưa có tin nhắn. Gửi lời chào đầu tiên nhé.</div>';
     $("#chat-messages").scrollTop = $("#chat-messages").scrollHeight;
     reply.disabled = false;
